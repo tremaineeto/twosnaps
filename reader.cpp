@@ -49,6 +49,8 @@ double scoreBasic(double obsMutated, double obsUnmutated) {
     // TODO: enter the math needed to calculate score here
     
     // log of Bayes Theorem for Mutated - log of Bayes Theorem for Unmutated
+    // need to edit the math here
+    score = log(obsMutated) - log(obsUnmutated);
     
     return score;
     
@@ -62,13 +64,17 @@ double scoreAdvanced() {
 int main(int argc, char *argv[])
 {
 	int id;
-    cout << "test" << endl;
+    cout << "test2" << endl;
     
 	double prob_obs_unmut, prob_obs_mut;
 	double score, phi, logp;
 	score = phi = logp = 0; // These need to be computed
     
     // score = scoreBasic(prob_obs_mut, prob_obs_unmut);
+    
+    // We will do this except that we store the result in "score"
+    double testScore = scoreBasic(5, 3);
+    cout << "Test score is: " << testScore << endl;
     
 	while(EOF != read_data(stdin, &id, &prob_obs_unmut, &prob_obs_mut)) {
 		//fprintf(stdout, "%d %lf %lf\n", id, prob_obs_unmut, prob_obs_mut);
